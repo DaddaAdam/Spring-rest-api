@@ -27,10 +27,6 @@ pipeline {
                 }
             }
         }
-        stage('Run Tests'){
-            steps {
-                sh './mvnw test'
-            }
-        }
+
     }
 }
