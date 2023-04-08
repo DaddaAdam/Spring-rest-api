@@ -7,6 +7,9 @@ pipeline {
 
     stages {
         stage('Copy Application.Properties') {
+            when {
+                expression { !fileExists("${WORKSPACE}/src/main/resources") }
+            }
             steps {
                 sh 'mkdir ${WORKSPACE}/src/main/resources'
                 sh 'cp ~/application.properties ${WORKSPACE}/src/main/resources/application.properties'
