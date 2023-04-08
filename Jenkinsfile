@@ -6,6 +6,11 @@ pipeline {
     }
 
     stages {
+        stage('Copy Application.Properties') {
+            steps {
+                sh 'cp ~/application.properties ${WORKSPACE}/src/main/resources/application.properties'
+            }
+        }
         stage('Build Docker image') {
             steps {
                 git 'https://github.com/DaddaAdam/Spring-rest-api.git'
