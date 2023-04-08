@@ -8,6 +8,7 @@ pipeline {
     stages {
         stage('Copy Application.Properties') {
             steps {
+                sh 'mkdir ${WORKSPACE}/src/main/resources'
                 sh 'cp ~/application.properties ${WORKSPACE}/src/main/resources/application.properties'
             }
         }
